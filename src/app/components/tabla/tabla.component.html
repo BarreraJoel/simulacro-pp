@@ -1,0 +1,14 @@
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Pelicula</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (item of listado; track $index) {
+            <tr (click)="emit(item)">
+                <td>{{item.nombre}}</td>
+            </tr>
+        }
+    </tbody>
+</table>

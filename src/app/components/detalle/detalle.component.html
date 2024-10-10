@@ -1,0 +1,9 @@
+@if (item) {
+    <h3>Nombre: {{item.nombre}}</h3>
+    <h3>Tipo: {{getValue(item.tipo)}}</h3>
+    <h3>Fecha de Estreno: {{item.fechaEstreno}}</h3>
+    <h3>Cantidad de público: {{item.cantPublico}}</h3>
+    <h3>Foto</h3>
+    <img [src]="item.foto" alt="">
+    <h3>Protagonista: {{item.protagonista}}</h3>
+}
