@@ -1,0 +1,16 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Bandera</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (pais of paises; track $index) {
+            <tr (click)="emit(pais)">
+                <th scope="row">{{pais.name.common}}</th>
+                <td><img [src]="pais.flags.png" alt="flag"></td>
+            </tr>
+        }
+    </tbody>
+</table>

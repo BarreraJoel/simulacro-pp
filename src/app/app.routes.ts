@@ -13,10 +13,10 @@ export const routes: Routes = [
     //     path: "actores",
     //     loadComponent: () => import("").then(m => m.)
     // },
-    // {
-    //     path: "alta-actor",
-    //     loadComponent: () => import("").then(m => m.)
-    // }
+    {
+        path: "alta-actor",
+        loadComponent: () => import("./pages/alta-actor/alta-actor.component").then(m => m.AltaActorComponent)
+    },
     {
         path: "",
         redirectTo: "peliculas",
