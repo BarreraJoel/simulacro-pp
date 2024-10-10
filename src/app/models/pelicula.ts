@@ -1,3 +1,5 @@
+import { Actor } from "./actor";
+
 export interface Pelicula {
     id: string,
     nombre: string,

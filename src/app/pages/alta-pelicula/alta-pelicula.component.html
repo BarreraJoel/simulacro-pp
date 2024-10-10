@@ -1,0 +1,63 @@
+<div class="container">
+    <main>
+        <div class="py-5 text-center">
+            <h2>Alta Pelicula</h2>
+        </div>
+
+        <div class="row g-5">
+            <div class="col-md-5 col-lg-4 order-md-last">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-primary">Actores</span>
+                </h4>
+                <ul class="list-group mb-3">
+                    <tabla-actores (enviarActor)="recibirActor($event)"></tabla-actores>
+                </ul>
+            </div>
+            <div class="col-md-7 col-lg-8">
+                <form class="needs-validation" [formGroup]="frm" (ngSubmit)="enviar()">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <label for="firstName" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="Ingrese el nombre" formControlName="nombre">
+                            <div class="invalid-feedback">
+                                Valid first name is required.
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="tipo" class="form-label">Tipo</label>
+                            <select class="form-control" formControlName="tipo">
+                                <option [value]="0">Terror</option>
+                                <option [value]="1">Amor</option>
+                                <option [value]="2">Comedia</option>
+                                <option [value]="3">Otros</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="username" class="form-label">Fecha de estreno</label>
+                            <div class="input-group has-validation">
+                                <input type="date" class="form-control" id="username" placeholder="Ingrese el documento" formControlName="fechaEstreno">
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="email" class="form-label">Cantidad de público</label>
+                            <input type="number" class="form-control" id="email" placeholder="Ingrese la edad" formControlName="cantPublico">
+                        </div>
+                    
+                        <div class="col-12">
+                            <label for="email" class="form-label">Foto</label>
+                            <input type="file" class="form-control" id="email" (change)="cambiarFoto($event)" formControlName="auxFoto">
+                        </div>
+
+                    </div>
+                    <button class="w-100 btn btn-primary btn-lg" type="submit">Dar de alta</button>
+                </form>
+                @if(respuesta) {
+                    {{respuesta}}
+                }
+            </div>
+        </div>
+    </main>
+</div>

@@ -1,0 +1,14 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Nombre</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (actor of actores; track $index) {
+            <tr (click)="emit(actor)">
+                <th scope="row">{{actor.nombre}} {{actor.apellido}}</th>
+            </tr>
+        }
+    </tbody>
+</table>
